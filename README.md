@@ -1,1 +1,1 @@
-SGM measurement automation project.
+SGM measurement automation project
