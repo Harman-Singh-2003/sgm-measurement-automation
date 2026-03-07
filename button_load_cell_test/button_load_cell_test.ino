@@ -77,9 +77,10 @@ void loop() {
     
     // Read calibrated weight in kg
     float weight_kg = scale.get_units(10);  // Average of 10 readings
+    float calibrated_weight_kg = weight_kg/18;
     
     // Convert to Newtons (Force = mass × gravity)
-    float force_newtons = weight_kg * KG_TO_NEWTONS;
+    float force_newtons = calibrated_weight_kg * KG_TO_NEWTONS;
     
     // Display results
     Serial.print("Raw: ");
@@ -87,7 +88,7 @@ void loop() {
     Serial.print(" | ");
     
     Serial.print("Weight: ");
-    Serial.print(weight_kg, 2);
+    Serial.print(calibrated_weight_kg, 2);
     Serial.print(" kg | ");
     
     Serial.print("Force: ");
